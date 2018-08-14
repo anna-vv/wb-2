@@ -30,7 +30,8 @@ $(document).ready(function() {
   images.click(function() {
     modal.css("display", "block");
     const bgimage = $(this).css("background-image");
-    const bgimageURL = bgimage.replace(/[\burl\b\(\"\)]/g, "");
+    let bgimageURL = bgimage.replace(/url/, "");
+    bgimageURL = bgimageURL.replace(/[\(\"\)]/g, "");
     modalImages.attr("src", bgimageURL);
   });
 
