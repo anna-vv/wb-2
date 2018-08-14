@@ -13,11 +13,6 @@ $(document).ready(function() {
 
   // fade in images in portfolio
 
-  // const images = $('.portfolio-image');
-  // images.each(function(i) {
-  //   $(this).delay(i * 200).fadeIn(1500);
-  // })
-
   const images = $(".portfolio-item");
   images.each(function(i) {
     $(this)
@@ -35,7 +30,7 @@ $(document).ready(function() {
   images.click(function() {
     modal.css("display", "block");
     const bgimage = $(this).css("background-image");
-    const bgimageURL = bgimage.replace(/[url\(\"\)]/g, "");
+    const bgimageURL = bgimage.replace(/[\burl\b\(\"\)]/g, "");
     modalImages.attr("src", bgimageURL);
   });
 
